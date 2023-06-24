@@ -11,7 +11,7 @@ test("quando o input estiver vazio, novos participantes não devem ser adicionad
 
   //Encontrar no DOM o input
   const input = screen.getByPlaceholderText(
-    "Insira os nomes dosparticipantes"
+    "Insira os nomes dos participantes"
   ); //Placeholder vindo do design do figma
 
   //Garantir o botão

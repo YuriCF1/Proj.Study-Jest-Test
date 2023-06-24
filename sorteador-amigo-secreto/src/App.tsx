@@ -1,12 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Formulario from './components/Formulario';
+import React from "react";
+import "./App.css";
+import Formulario from "./components/Formulario";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
     <div className="App">
-      <Formulario />
+      <BrowserRouter>
+        <RecoilRoot>
+          <Routes>
+            <Route path="/" element={<Formulario />} />
+          </Routes>
+        </RecoilRoot>
+      </BrowserRouter>
     </div>
   );
 }
