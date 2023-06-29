@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import Formulario from "./Formulario";
 import { RecoilRoot } from "recoil";
@@ -91,4 +91,49 @@ test("nomes duplicados não podem ser adicionados na lista", () => {
   expect(mensagemDeErro.textContent).toBe(
     "Nomes duplicados não são permitidos"
   );
+});
+
+//Sumiço da mensagem após certo tempo
+test("A mensagem deve sumir após os timers", () => {
+  jest.useFakeTimers();
+
+  render(
+    <RecoilRoot>
+      <Formulario />
+    </RecoilRoot>
+  );
+  const input = screen.getByPlaceholderText(
+    "Insira os nomes dos participantes"
+  );
+  const botao = screen.getByRole("button");
+
+  //Testando o envio duplo
+  fireEvent.change(input, {
+    target: {
+      value: "Ana Catarina",
+    },
+  });
+
+  fireEvent.click(botao);
+
+  fireEvent.change(input, {
+    target: {
+      value: "Ana Catarina",
+    },
+  });
+
+  fireEvent.click(botao);
+
+  // let mensagemDeErro = screen.getByRole("alert"); //get obriga a existência, ou é falha
+  let mensagemDeErro = screen.queryByRole("alert"); //query permite a falta do elemento
+  expect(mensagemDeErro).toBeInTheDocument();
+
+  act(() => {
+    jest.runAllTimers();
+    /* fire events that update state */
+  });
+
+  //Esperar N segundos
+  mensagemDeErro = screen.queryByRole("alert");
+  expect(mensagemDeErro).toBeNull();
 });
