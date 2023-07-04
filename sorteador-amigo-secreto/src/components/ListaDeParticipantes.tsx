@@ -1,7 +1,7 @@
-import { useLitaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
+import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
 
 const ListaDeParticipantes = () => {
-  const participantes: string[] = useLitaDeParticipantes();
+  const participantes: string[] = useListaDeParticipantes();
   return (
     <ul>
       {participantes.map((participante) => (
