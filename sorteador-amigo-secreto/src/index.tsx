@@ -7,7 +7,6 @@ import Card from "./components/Card";
 ReactDOM.render(
   <React.StrictMode>
     <Cabecalho />
-    <Card></Card>
     <App />
   </React.StrictMode>,
   document.getElementById("root")
