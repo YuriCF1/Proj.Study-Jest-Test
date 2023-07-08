@@ -4,7 +4,7 @@ import { RecoilRoot } from "recoil";
 import Rodape from "./Rodape";
 import { useListaDeParticipantes } from "../../state/hooks/useListaDeParticipantes";
 
-jest.mock("../state/hooks/useListaDeParticipantes.ts", () => {
+jest.mock("../../state/hooks/useListaDeParticipantes", () => {
   return {
     useListaDeParticipantes: jest.fn(),
   };
