@@ -1,9 +1,13 @@
 import shuffle from "just-shuffle"
 import { useListaDeParticipantes } from "./useListaDeParticipantes"
+import { useSetRecoilState } from "recoil"
+import { resultadoDoAmigoSecreto } from "../atom"
 
 export const useSorteador = () => {
 
     const participantes = useListaDeParticipantes()
+
+    const setResultado = useSetRecoilState(resultadoDoAmigoSecreto)
 
     return () => {
         const totalDeParticipantes = participantes.length
@@ -16,5 +20,7 @@ export const useSorteador = () => {
             const indiceDoAmigo = index === (totalDeParticipantes - 1) ? 0 : index + 1
             resultado.set(embaralhado[index], embaralhado[indiceDoAmigo])
         }
+
+        setResultado(resultado)
     }
 }
