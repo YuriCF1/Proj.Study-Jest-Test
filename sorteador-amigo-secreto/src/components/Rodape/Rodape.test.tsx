@@ -3,6 +3,7 @@ import React from "react";
 import { RecoilRoot } from "recoil";
 import Rodape from "./Rodape";
 import { useListaDeParticipantes } from "../../state/hooks/useListaDeParticipantes";
+import { useSorteador } from "../../state/hooks/useSorteador";
 
 jest.mock("../../state/hooks/useListaDeParticipantes", () => {
   return {
@@ -11,11 +12,18 @@ jest.mock("../../state/hooks/useListaDeParticipantes", () => {
 });
 
 const mockNavegacao = jest.fn();
+const mockSorteio = jest.fn();
 
 jest.mock("react-router-dom", () => {
   return {
     //Para mockar qualquer outro hook que retorne uma função, tem que determinar dessa forma
     useNavigate: () => mockNavegacao, //Chamando a função, pois o useNavigate está sendo invocado como função através de uma const
+  };
+});
+
+jest.mock("../../state/hooks/useSorteador", () => {
+  return {
+    useSorteador: () => mockSorteio,
   };
 });
 
@@ -70,5 +78,7 @@ describe("Quando existir participantes o suficiente", () => {
     // expect(mockNavegacao).toHaveBeenCalled();
     expect(mockNavegacao).toHaveBeenCalledTimes(1);
     expect(mockNavegacao).toHaveBeenCalledWith("/sorteio");
+
+    expect(mockSorteio).toHaveBeenCalledTimes(1);
   });
 });
