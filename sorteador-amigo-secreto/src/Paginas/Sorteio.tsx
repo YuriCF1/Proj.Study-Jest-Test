@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
 import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio";
 
+import './Sorteio.css'
+
 const Sorteio = () => {
   const [participanteDaVez, setParticipanteDaVez] = useState("");
   const [amigoSecreto, setAmigoSecreto] = useState("");
