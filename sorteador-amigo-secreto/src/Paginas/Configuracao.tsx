@@ -6,15 +6,15 @@ import Card from "../components/Card";
 
 const Configuracao = () => {
   return (
-      <Card>
-          <section>
-              <h2>Vamos começar!</h2>
-              <Formulario />
-              <ListaDeParticipantes />
-              <Rodape />
-          </section>
-      </Card>
-  )
-}
+    <Card>
+      <section>
+        <h2>Vamos começar!</h2>
+        <Formulario />
+        <ListaDeParticipantes />
+        <Rodape />
+      </section>
+    </Card>
+  );
+};
 
-export default Configuracao
+export default Configuracao;
