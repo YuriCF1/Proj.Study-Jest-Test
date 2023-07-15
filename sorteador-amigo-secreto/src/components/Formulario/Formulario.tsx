@@ -1,4 +1,4 @@
-import './Formulario.css'
+import "./Formulario.css";
 
 import React, { useEffect, useRef, useState } from "react";
 import { useAdicionarParticipante } from "../../state/hooks/useAdicionarParticipante";
@@ -22,15 +22,21 @@ const Formulario = () => {
 
   return (
     <form onSubmit={adicionarParticipante}>
-      <input
-        ref={inputRef}
-        value={nome}
-        onChange={(evento) => setNome(evento.target.value)}
-        type="text"
-        placeholder="Insira os nomes dos participantes"
-      />
-      <button disabled={!nome}>Adicionar</button>
-      {mensagemDeErro && <p role="alert">{mensagemDeErro}</p>}
+      <div className="grupo-input-btn">
+        <input
+          ref={inputRef}
+          value={nome}
+          onChange={(evento) => setNome(evento.target.value)}
+          type="text"
+          placeholder="Insira os nomes dos participantes"
+        />
+        <button disabled={!nome}>Adicionar</button>
+        {mensagemDeErro && (
+          <p role="alert" className={"alerta erro"}>
+            {mensagemDeErro}
+          </p>
+        )}
+      </div>
     </form>
   );
 };
