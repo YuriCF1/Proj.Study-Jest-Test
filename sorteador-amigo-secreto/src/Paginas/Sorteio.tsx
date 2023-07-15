@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
 import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio";
 
-import './Sorteio.css'
+import "./Sorteio.css";
 
 const Sorteio = () => {
   const [participanteDaVez, setParticipanteDaVez] = useState("");
@@ -34,9 +34,16 @@ const Sorteio = () => {
             <option key={participante}>{participante}</option>
           ))}
         </select>
-        <button>Sorteador</button>
+        <button className={"botao-sortear"}>Sorteador</button>
       </form>
       {amigoSecreto && <p role="alert">{amigoSecreto}</p>}
+      <footer className="sorteio">
+        <img
+          src="./img/aviao.png"
+          className="aviao"
+          alt="Um desenho de um avião de papel"
+        />
+      </footer>
     </section>
   );
 };
