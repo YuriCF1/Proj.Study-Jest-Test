@@ -3,6 +3,8 @@ import { useListaDeParticipantes } from "../../state/hooks/useListaDeParticipant
 import { useNavigate } from "react-router-dom";
 import { useSorteador } from "../../state/hooks/useSorteador";
 
+import "./Rodape.css";
+
 const Rodape = () => {
   const participantes = useListaDeParticipantes();
 
@@ -17,7 +19,11 @@ const Rodape = () => {
 
   return (
     <footer>
-      <button disabled={participantes.length < 3} onClick={iniciar}>
+      <button
+        className="botao"
+        disabled={participantes.length < 3}
+        onClick={iniciar}
+      >
         Iniciar brincadeira
       </button>
     </footer>
