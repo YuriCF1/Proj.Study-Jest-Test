@@ -3,7 +3,7 @@
 import { useListaDeParticipantes } from "./useListaDeParticipantes"
 import { useSetRecoilState } from "recoil"
 import { resultadoDoAmigoSecreto } from "../atom"
-import realizarSorteio from "../helpers/realizarSorteio"
+import { realizarSorteio } from "../helpers/realizarSorteio"
 
 export const useSorteador = () => {
 
