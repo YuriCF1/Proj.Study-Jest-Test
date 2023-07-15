@@ -3,6 +3,7 @@ import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes"
 import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio";
 
 import "./Sorteio.css";
+import Card from "../components/Card";
 
 const Sorteio = () => {
   const [participanteDaVez, setParticipanteDaVez] = useState("");
@@ -20,31 +21,37 @@ const Sorteio = () => {
   };
 
   return (
-    <section>
-      <form onSubmit={sortear}>
-        <select
-          required
-          name="participanteDaVez"
-          id="participanteDaVez"
-          placeholder="Selecione o seu nome"
-          value={participanteDaVez}
-          onChange={(e) => setParticipanteDaVez(e.target.value)}
-        >
-          {participantes.map((participante) => (
-            <option key={participante}>{participante}</option>
-          ))}
-        </select>
-        <button className={"botao-sortear"}>Sorteador</button>
-      </form>
-      {amigoSecreto && <p role="alert">{amigoSecreto}</p>}
-      <footer className="sorteio">
-        <img
-          src="./img/aviao.png"
-          className="aviao"
-          alt="Um desenho de um avião de papel"
-        />
-      </footer>
-    </section>
+    <Card>
+      <section className="sorteio">
+        <form onSubmit={sortear}>
+          <select
+            required
+            name="participanteDaVez"
+            id="participanteDaVez"
+            placeholder="Selecione o seu nome"
+            value={participanteDaVez}
+            onChange={(e) => setParticipanteDaVez(e.target.value)}
+          >
+            {participantes.map((participante) => (
+              <option key={participante}>{participante}</option>
+            ))}
+          </select>
+          <button className="botao-sortear">Sorteador</button>
+        </form>
+        {amigoSecreto && (
+          <p role="alert" className="resultado">
+            {amigoSecreto}
+          </p>
+        )}
+        <footer className="sorteio">
+          <img
+            src="./img/aviao.png"
+            className="aviao"
+            alt="Um desenho de um avião de papel"
+          />
+        </footer>
+      </section>
+    </Card>
   );
 };
 
