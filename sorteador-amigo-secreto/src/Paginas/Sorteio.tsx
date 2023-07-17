@@ -32,6 +32,8 @@ const Sorteio = () => {
             value={participanteDaVez}
             onChange={(e) => setParticipanteDaVez(e.target.value)}
           >
+            {/* Inserindo outra option para que eu não precise mudar o nome para inciar o sorteio */}
+            <option>Selecione seu nome</option>
             {participantes.map((participante) => (
               <option key={participante}>{participante}</option>
             ))}
