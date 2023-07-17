@@ -1,4 +1,4 @@
-import realizarSorteio from "./realizarSorteio"
+import { realizarSorteio } from "./realizarSorteio"
 
 describe("Dado um sorteio de um amigo secreto", () => {
     test("Cada participante não sorteio o próprio nome", () => {
