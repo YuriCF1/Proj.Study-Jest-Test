@@ -1,6 +1,6 @@
 import shuffle from "just-shuffle"
 
-export default function realizarSorteio(participantes: string[]) {
+export function realizarSorteio(participantes: string[]) {
     const totalDeParticipantes = participantes.length
     const embaralhado = shuffle(participantes)
 
