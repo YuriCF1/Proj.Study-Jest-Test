@@ -24,7 +24,7 @@ describe("Uma página de configuracao", () => {
         <Configuracao />
       </RecoilRoot>
     );
-    
+
     //OBS: Caso eu queira atualizar o snapshot, apertar W e depois U no console de test
 
     expect(container).toMatchSnapshot();

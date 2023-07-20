@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Cabecalho from "./components/Cabecalho";
 
-import "./index.css"
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
