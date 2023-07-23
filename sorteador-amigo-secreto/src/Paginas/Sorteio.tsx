@@ -17,6 +17,9 @@ const Sorteio = () => {
     e.preventDefault();
     if (resultadoAmigoSecreto.has(participanteDaVez)) {
       setAmigoSecreto(resultadoAmigoSecreto.get(participanteDaVez)!); //Validando a existência evitando undefined
+      setTimeout(() => {
+        setAmigoSecreto("");
+      }, 5000);
     }
   };
 
