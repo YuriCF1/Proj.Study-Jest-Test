@@ -31,7 +31,7 @@ const Sorteio = () => {
             required
             name="participanteDaVez"
             id="participanteDaVez"
-            placeholder="Selecione o seu nome"
+            placeholder="Selecione o participante"
             value={participanteDaVez}
             onChange={(e) => setParticipanteDaVez(e.target.value)}
           >
