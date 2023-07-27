@@ -82,7 +82,7 @@ describe("Na pagin de sorteio", () => {
 
     const botao = screen.getByRole("button");
 
-    //Esperar N segundos
+    //Esperar N segundos, de acordo com os timers já progrmados
     fireEvent.click(botao);
     act(() => {
       jest.runAllTimers();
