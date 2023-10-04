@@ -17,9 +17,9 @@
     "react-scripts": "5.0.0",
     "recoil": "^0.6.1",
     "typescript": "^4.6.2",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://yuricf1.github.io/Proj.Study-Jest-Test/"
+    "web-vitals": "^2.1.4"
   },
+  "homepage": "https://yuricf1.github.io/Proj.Study-Jest-Test/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
