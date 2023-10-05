@@ -24,7 +24,7 @@ Project to sort name for a Secret Santa play
 
 
 ### Deploy of the project: Done
-https://yuricf1.github.io/Proj.Study-React-10/
+https://yuricf1.github.io/Proj.Study-Jest-Test/
 
 ## 🤝 Colaborators
 
